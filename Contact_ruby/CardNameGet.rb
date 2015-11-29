@@ -26,6 +26,9 @@ for id_num in 1..50 do
     puts "カード名未入力"
 #カード名表示
   else
+    wallet = recorddata["record"]["カテゴリー"]["value"].to_s
+    wallet_split = wallet.split('"')
+    print  wallet_split[1]+"\t"
     puts recorddata["record"]["文字列__1行_"]["value"]
   end
 end
