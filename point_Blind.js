@@ -1,7 +1,7 @@
 (function () {
     "use strict";
     kintone.events.on(['app.record.edit.change.カードの種類', 'app.record.create.change.カードの種類'], function (event) {
-        // 「合計」フィールドの入力を制限
+        // ポイント残高の入力判断
         var record = event['record'];
 
         if (record['カードの種類'].value != "ポイントカード" ){
@@ -34,18 +34,4 @@
                                 }
         return event;
     });
-    /*
-    kintone.events.on('app.record.detail.show',function (event){
-        if (record['名義'].value == null){
-          kintone.app.record.setFieldShown('名義',false);
-        }else {
-          kintone.app.record.setFieldShown('名義',true);
-        }
-        if (record['ポイント残高'].value == null){
-          kintone.app.record.setFieldShown('ポイント残高',false);
-        }else {
-          kintone.app.record.setFieldShown('ポイント残高',true);
-        }
-        return event;
-     */
 })();
